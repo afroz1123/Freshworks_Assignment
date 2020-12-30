@@ -1,0 +1,108 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct value{ //userdefined structure to hold details of a student
+	string address;
+	int age;
+	int rollno;
+};
+
+unordered_map<string ,value> m;
+
+void create() //creating the key-value pairs
+{
+	cout<<"Enter name:-";
+	string name;
+	cin.ignore();
+	getline(cin,name);
+	if(name.size()>32) //checking if the size of the key is correct
+	{
+		cout<<"Character limits exceeded"<<endl;
+		return;
+	}
+	if(m.find(name)!=m.end())
+	{
+		cout<<"Key already exists"<<endl;
+		return;
+	}
+	value v1;
+	string add;
+	int a;
+	int r;
+	cout<<"Enter address: ";
+	cin>>add;
+	v1.address=add;
+	cout<<"Enter age: ";
+	cin>>a;
+	v1.age=a;
+	cout<<"Enter roll: ";
+	cin>>r;
+	v1.rollno=r;
+	m[name]=v1;
+}
+
+void read()// reading the data from key value map
+{
+	string name;
+	cout<<"Enter person's name:- ";
+	cin.ignore();
+	getline(cin,name);
+	if(m.find(name)==m.end())//checking if the key is present or not
+	{
+		cout<<"Key does not exist"<<endl;
+		return;
+	}
+	cout<<"Person's address:- "<<m[name].address<<endl;
+	cout<<"Person's age:- "<<m[name].age<<endl;
+	cout<<"Person's rollno:- "<<m[name].rollno<<endl;
+}
+
+void Delete()//deletion of details of a particular person
+{
+	string name;
+	cout<<"Enter name to Delete:- ";
+	cin.ignore();
+	getline(cin,name);
+	if(m.find(name)==m.end())//checking if the details is present or not
+	{
+		cout<<"Key does not exist"<<endl;
+		return;
+	}
+	m.erase(name);
+	cout<<"Key Deleted"<<endl;
+}
+
+int main()
+{
+	cout<<"Following Methods:-"<<endl;
+
+	while(true)
+	{
+		cout<<endl;
+		cout<<"1.Create"<<endl;//choices for a user
+		cout<<"2.Read"<<endl;
+		cout<<"3.Delete"<<endl;
+		cout<<"4.Press -1 to end"<<endl;
+
+		cout<<"Enter choice"<<endl;
+		int choice;
+		cin >> choice;
+		if(choice==-1)// to get out of the current program
+		{
+			break;
+		}
+		if(choice==1)//choice to create a key-value pair
+		{
+			create();
+		}
+		else if(choice==2)//choice to read data from the map
+		{
+			read();
+		}
+		else{
+			Delete();//choice to delete a key from the map
+		}
+	}
+
+	return 0;
+}
