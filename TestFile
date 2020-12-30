@@ -1,0 +1,37 @@
+
+/* Test File Output for the code*/
+
+
+Following Methods:-
+
+1.Create
+2.Read
+3.Delete
+4.Press -1 to end
+Enter choice
+1
+Enter name:-Afroz Ahmad
+Enter address: Burdwan
+Enter age: 23
+Enter roll: 123
+
+1.Create
+2.Read
+3.Delete
+4.Press -1 to end
+Enter choice
+2
+Enter person's name:- Afroz Ahmad
+Person's address:- Burdwan
+Person's age:- 23
+Person's rollno:- 123
+
+1.Create
+2.Read
+3.Delete
+4.Press -1 to end
+Enter choice
+-1
+
+Process returned 0 (0x0)   execution time : 30.224 s
+Press any key to continue.
